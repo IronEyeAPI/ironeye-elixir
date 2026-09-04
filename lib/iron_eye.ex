@@ -147,7 +147,8 @@ defmodule IronEye do
   def objection(client, subject), do: request(client, :post, "/v1/gdpr/objections", json: subject)
 
   @spec access_request(Client.t(), map()) :: result()
-  def access_request(client, subject), do: request(client, :post, "/v1/gdpr/access", json: subject)
+  def access_request(client, subject),
+    do: request(client, :post, "/v1/gdpr/access", json: subject)
 
   @spec suppression(Client.t()) :: result()
   def suppression(client), do: request(client, :get, "/v1/gdpr/suppression")
