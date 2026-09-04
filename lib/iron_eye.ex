@@ -93,8 +93,7 @@ defmodule IronEye do
           {:ok, record}
 
         System.monotonic_time(:millisecond) + interval > deadline ->
-          {:error,
-           %Error{code: "TIMEOUT", message: "job #{job_id} is still #{record["status"]}"}}
+          {:error, %Error{code: "TIMEOUT", message: "job #{job_id} is still #{record["status"]}"}}
 
         true ->
           Process.sleep(interval)
